@@ -4,31 +4,40 @@ require_relative '../models/game'
 class TestGame < Minitest::Test
 
   def test_rock_scissors()
-    assert_equal("rock wins", who_won(rock, scissors))
+    game = Game.new("rock", "scissors")
+    assert_equal("win", game.play())
   end
 
   def test_rock_paper()
-    assert_equal("paper wins", who_won(rock, paper))
+    game = Game.new("rock", "paper")
+    assert_equal("lose", game.play())
   end
   def test_rock_rock()
-    assert_equal("draw", who_won(rock, rock))
+    game = Game.new("rock", "rock")
+    assert_equal("tie", game.play())
   end
   def test_scissors_rock()
-    assert_equal("rock wins", who_won(scissors, rock))
+    game = Game.new("scissors", "rock")
+    assert_equal("lose", game.play())
   end
   def test_scissors_paper()
-    assert_equal("scissors wins", who_won(scissors, paper))
+    game = Game.new( "scissors", "paper")
+    assert_equal("win", game.play())
   end
   def test_scissors_scissors()
-    assert_equal("draw", who_won(scissors, scissors))
+    game = Game.new("scissors", "scissors")
+    assert_equal("tie", game.play())
   end
   def test_paper_rock()
-    assert_equal("paper wins", who_won(paper, rock))
+    game = Game.new("paper", "rock")
+    assert_equal("win", game.play())
   end
   def test_paper_scissors()
-    assert_equal("scissors wins", who_won(paper, scissors))
+    game = Game.new("paper", "scissors")
+    assert_equal("lose", game.play())
   end
   def test_paper_paper()
-    assert_equal("draw", who_won(paper, paper))
+    game = Game.new("paper", "paper")
+    assert_equal("tie", game.play())
   end
 end
