@@ -1,0 +1,33 @@
+body, footer {
+  font-family: Monospace;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+footer a {
+  color: #000;
+  text-decoration:  none;
+  font-size: 2em;
+}
+
+h1.h1-winner {
+  text-decoration: underline red;
+}
+
+
+
+/*Divs around entire game*/
+.gamebox {
+  border: 5px solid #000;
+  width: 600px;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+.fa {
+  font-size: 6em;
+  cursor: pointer;
+  margin: 0.25em;
+}

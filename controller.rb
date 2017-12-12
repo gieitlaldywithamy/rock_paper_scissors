@@ -12,5 +12,5 @@ get('/:player1/:player2') do
   @player2 = params[:player2]
   game = Game.new(@player1, @player2)
   @result = game.play()
-  erb(:game)
+  erb(:rock_paper_scissors)
 end

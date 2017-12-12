@@ -16,6 +16,8 @@ class Game
     player2_move = @player2.to_sym
     return @rules[player1_move][player2_move]
   end
+
+
 end
 
     # table_logic = {
