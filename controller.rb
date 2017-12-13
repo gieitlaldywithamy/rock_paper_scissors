@@ -7,10 +7,11 @@ get ('/') do
   erb(:home)
 end
 
-get('/:player1/:player2') do
+get('/:player1') do
   @player1 = params[:player1]
-  @player2 = params[:player2]
-  game = Game.new(@player1, @player2)
+
+  game = Game.new(@player1)
+  @computer_move = game.computer_move
   @result = game.play()
   erb(:rock_paper_scissors)
 end

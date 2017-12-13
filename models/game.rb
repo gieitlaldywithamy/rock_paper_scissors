@@ -1,21 +1,28 @@
 require('pry-byebug')
 class Game
 
-  def initialize(player1, player2)
+  attr_reader :player1, :computer_move
+
+  def initialize(player1)
     @player1 = player1
-    @player2 = player2
+    # @player2 = player2
     @rules = {
        :rock     => { :rock => 'tie',   :paper => 'lose',  :scissors => 'win'},
        :paper    => { :rock => 'win',   :paper => 'tie',   :scissors => 'lose'},
        :scissors => { :rock => 'lose',  :paper => 'win',   :scissors => 'tie' },
      }
+     @computer_move = ['rock', 'paper', 'scissors'].sample
   end
 
   def play()
     player1_move = @player1.to_sym
-    player2_move = @player2.to_sym
-    return @rules[player1_move][player2_move]
+    computer_move = @computer_move.to_sym
+    
+    # player2_move = @player2.to_sym
+    return @rules[player1_move][computer_move]
   end
+
+
 
 
 end

@@ -1,11 +1,10 @@
 <h1 class = "h1-winner" >
-<%= 'Winner : Player 1' if @result == 'win' %>
-<%= 'Winner : Player 2' if @result == 'lose' %>
-<%= 'Draw' if @result == 'tie' %>
+<% @result == 'win' ? "WINNER" : "LOSER" %>
+
 </h1>
 
 
 <h2> Player 1 served
 <%= @player1 %> </h2>
-<h2> Player 2 served
-<%= @player2 %> </h2>
+<h2> Computer served
+<%= @computer_move %> </h2>
